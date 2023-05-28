@@ -1,0 +1,14 @@
+version: '3'
+services:
+    api:
+        build: .
+        ports: 
+            - 8000:8000
+        environment:
+                - API_KEY_FACEIT = 2710cdaf-c0db-4c94-a3d3-a24cd02bebd0
+                - API_KEY_TRACKER = b8cd2911-f2b9-4bc4-92fb-8a0062b42998
+                - DATABASE_HOSTNAME = localhost
+                - DATABASE_PORT = 5432
+                - DATABASE_PASSWORD = assasin1q2w
+                - DATABASE_NAME = Accounts
+                - DATABASE_USERNAME = postgres

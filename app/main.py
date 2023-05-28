@@ -21,3 +21,7 @@ app.add_middleware(
 app.include_router(account.router)
 app.include_router(faceit.router)
 app.include_router(tracker_gg.router)
+
+@app.get("/")
+def root():
+    return {"message": "Hello World pushing out to ubuntu"}
