@@ -24,4 +24,4 @@ app.include_router(tracker_gg.router)
 
 @app.get("/")
 def root():
-    return {"message": "Hello World pushing out to ubuntu"}
+    return {"message": "Hello world"}

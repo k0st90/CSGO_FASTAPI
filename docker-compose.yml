@@ -1,14 +1,33 @@
 version: '3'
 services:
-    api:
-        build: .
-        ports: 
-            - 8000:8000
-        environment:
-                - API_KEY_FACEIT = 2710cdaf-c0db-4c94-a3d3-a24cd02bebd0
-                - API_KEY_TRACKER = b8cd2911-f2b9-4bc4-92fb-8a0062b42998
-                - DATABASE_HOSTNAME = localhost
-                - DATABASE_PORT = 5432
-                - DATABASE_PASSWORD = assasin1q2w
-                - DATABASE_NAME = Accounts
-                - DATABASE_USERNAME = postgres
+  api:
+    build: .
+    depends_on:
+        - postgres
+    ports: 
+      - 8000:8000
+    volumes:
+      - ./:/usr/src/app:ro
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload 
+    environment:
+            - DATABASE_HOSTNAME = postgres
+            - DATABASE_PORT = 5432
+            - DATABASE_PASSWORD = assasin1q2w
+            - DATABASE_NAME = fastapi
+            - DATABASE_USERNAME = postgres 
+
+  postgres:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=assasin1q2w
+      - POSTGRES_DB=fastapi
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+
+
+volumes: 
+  postgres-db:
+           
+
