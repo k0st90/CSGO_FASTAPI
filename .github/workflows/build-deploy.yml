@@ -6,6 +6,14 @@ on:
 
 jobs: 
   job1:
+      env:
+        DATABASE_HOSTNAME: localhost
+        DATABASE_PORT: 5432
+        DATABASE_PASSWORD: assasin1q2w
+        DATABASE_NAME: fastapi
+        DATABASE_USERNAME: postgres
+        API_KEY_FACEIT: 2710cdaf-c0db-4c94-a3d3-a24cd02bebd0
+        API_KEY_TRACKER: b8cd2911-f2b9-4bc4-92fb-8a0062b42998
       runs-on: ubuntu-latest
       steps: 
         - name: pulling git repo
