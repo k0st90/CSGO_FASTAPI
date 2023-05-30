@@ -22,6 +22,6 @@ app.include_router(account.router)
 app.include_router(faceit.router)
 app.include_router(tracker_gg.router)
 
-@app.get("/")
-def root():
-    return {"message": "Successfully deployed to CI\CD pipeline"}
+# @app.get("/")
+# def root():
+#     return {"message": "Successfully deployed to CI\CD pipeline"}
