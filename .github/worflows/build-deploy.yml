@@ -2,8 +2,8 @@ name: Build and Deploy code
 
 on:
   push:
-    branches: ['main']
-  
+    branches: ['main'] #kik
+
 jobs: 
   job1:
       runs-on: ubuntu-latest
