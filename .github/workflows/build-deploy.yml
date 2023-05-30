@@ -6,14 +6,16 @@ on:
 
 jobs: 
   job1:
+      environment:
+        name: testing
       env:
-        DATABASE_HOSTNAME: localhost
-        DATABASE_PORT: 5432
-        DATABASE_PASSWORD: assasin1q2w
-        DATABASE_NAME: fastapi_test
-        DATABASE_USERNAME: postgres
-        API_KEY_FACEIT: 2710cdaf-c0db-4c94-a3d3-a24cd02bebd0
-        API_KEY_TRACKER: b8cd2911-f2b9-4bc4-92fb-8a0062b42998
+        DATABASE_HOSTNAME: ${{secrets.DATABASE_HOSTNAME}}
+        DATABASE_PORT: ${{secrets.DATABASE_PORT}}
+        DATABASE_PASSWORD: ${{secrets. DATABASE_PASSWORD}}
+        DATABASE_NAME: ${{secrets.DATABASE_NAME}}
+        DATABASE_USERNAME: ${{secrets.DATABASE_USERNAME}}
+        API_KEY_FACEIT: ${{secrets.API_KEY_FACEIT}}
+        API_KEY_TRACKER: ${{secrets.API_KEY_TRACKER}}
       runs-on: ubuntu-latest
       steps: 
         - name: pulling git repo
